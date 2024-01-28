@@ -65,6 +65,11 @@
     text-align: left;
 }
 
+@font-face {
+    font-family: 'Lucida Console', monospace;
+    src: url('../fonts/Lucida Console.ttf');
+}
+
 .center {
     text-align: center;
 }
