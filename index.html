@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <title>Louis Lee</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -21,7 +17,9 @@
                     <br><br>
                     I'm interested in software engineering, web development, and information security.
                     <br><br>
-                    <div class="typewriter">And below is my resume.</div>
+                    <div class="typewriter-container">
+                        <div class="typewriter">And below is my resume.</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,7 +119,7 @@
                 </div>
                 <h2>Education</h2>
                 <div class="row">
-                    <div class="col left sm">
+                    <div class="col left md">
                         The Hong Kong Polytechnic University
                     </div>
                     <div class="col right sm">
@@ -134,7 +132,7 @@
                     </ul>
                 </div>
                 <div class="row">
-                    <div class="col left sm">
+                    <div class="col left md">
                         Hong Kong Institute of Vocational Education
                     </div>
                     <div class="col right sm">
@@ -149,6 +147,7 @@
                 </div>
             </div>
         </div>
+        <button class="download-btn-mobile" onclick="window.open('doc/resume.pdf', '_blank')">Download it</button>
     </div>
 </body>
 </html>

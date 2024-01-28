@@ -1,6 +1,7 @@
 .container {
     display: grid;
     justify-content: center;
+    -webkit-text-size-adjust: 100%;
 }
 
 .header {
@@ -13,6 +14,7 @@
 }
 
 .download-btn {
+    display: none;
     background-color: #9b9b9b;
     border: none;
     color: white;
@@ -38,12 +40,31 @@
     background-color: #515151;
 }
 
+.download-btn-mobile {
+    display: unset;
+    background-color: #9b9b9b;
+    border: none;
+    color: white;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 3em;
+    margin: 1em 0.7em;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Cormorant Infant', serif;
+}
+
 .row {
     display: flex;
 }
 
 .col {
     flex: 50%;
+}
+
+.header .row {
+    flex-direction: column;
 }
 
 .left {
@@ -59,25 +80,31 @@
 }
 
 .mono {
-    font-family: 'Lucida Console', monospace;
-    margin-left: 2em;
+    font-family: 'Lucida Console', serif;
+    margin: 0em 2em;
+    line-height: 1.5em;
     align-self: center;
     text-align: left;
+    font-size: 1.5em;
 }
 
 @font-face {
-    font-family: 'Lucida Console', monospace;
-    src: url('../fonts/Lucida Console.ttf');
+    font-family: 'Lucida Console';
+    src: url('../font/Lucida_Console_Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Cormorant Infant';
+    src: url('../font/Cormorant_Infant_Light.ttf');
+}
+
+@font-face {
+    font-family: 'Cormorant SC';
+    src: url('../font/Cormorant_SC_Light.ttf');
 }
 
 .center {
     text-align: center;
-}
-
-.profile-pic {
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
 }
 
 .content {
@@ -116,70 +143,85 @@ ul.dash>li:before {
     content: "- ";
 }
 
-/* When screen smaller than 800px */
-@media screen and (max-width: 800px) {
+.profile-pic {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 2em;
+}
+
+.paper {
+    width: 100%;
+    padding: 2em;
+    margin: 2em;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    border: 1px solid #888888;
+    box-shadow: 10px 5px 5px #888888;
+    font-family: 'Cormorant Infant', serif;
+    font-size: 1.65vw;
+    position: relative;
+}
+
+.sm {
+    font-size: 1.5vw;
+}
+
+.md {
+    font-weight: bold;
+}
+
+.paper h1 {
+    font-size: 5vw;
+    font-family: 'Cormorant SC', serif;
+    margin-bottom: 0px;
+}
+
+.paper h2 {
+    font-size: 2.5vw;
+    font-family: 'Cormorant SC', serif;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.paper h3 {
+    font-size: 1.7vw;
+    font-family: 'Cormorant Infant', serif;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.paper table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    font-size: 1.65vw;
+}
+
+@media (min-width: 1000px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .header .row {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .profile-pic {
-        margin-bottom: 2em;
+        margin-bottom: 0em;
     }
 
     .mono {
-        margin-right: 2em;
-    }
-}
-
-/* When screen smaller than 1000px */
-@media screen and (max-width: 1000px) {
-    .paper {
-        width: 100%;
-        padding: 2em;
-        margin: 2em;
-        background-color: #f1f1f1;
-        border-radius: 5px;
-        border: 1px solid #888888;
-        box-shadow: 10px 5px 5px #888888;
-        font-family: 'Cormorant Infant', serif;
-        font-size: 1.65vw;
-        position: relative;
+        margin: 0em 2em;
+        font-size: 1em;
     }
 
-    .sm {
-        font-size: 1.5vw;
+    .profile-pic {
+        width: 150px;
+        height: 150px;
     }
 
-    .paper h1 {
-        font-size: 5vw;
-        font-family: 'Cormorant SC', serif;
-        margin-bottom: 0px;
-    }
-
-    .paper h2 {
-        font-size: 2.5vw;
-        font-family: 'Cormorant SC', serif;
-        text-align: left;
-        margin-top: 20px;
-    }
-
-    .paper h3 {
-        font-size: 1.7vw;
-        font-family: 'Cormorant Infant', serif;
-        text-align: left;
-        margin-bottom: 5px;
-    }
-
-    .paper table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 1em;
-        font-size: 1.65vw;
-    }
-}
-
-/* When screen larger than 1000px */
-@media screen and (min-width: 1000px) {
     .paper {
         width: 100%;
         padding: 2em;
@@ -223,6 +265,18 @@ ul.dash>li:before {
         margin-top: 1em;
         font-size: 16.5px;
     }
+
+    .download-btn {
+        display: unset;
+    }
+
+    .download-btn-mobile {
+        display: none;
+    }
+}
+
+.typewriter-container {
+    display: inline-block;
 }
 
 .typewriter {
@@ -230,15 +284,15 @@ ul.dash>li:before {
     border-right: .15em solid black;
     white-space: nowrap;
     animation: 
-        typing 1.5s steps(35, end),
+        typing 2.3s steps(40, end) forwards,
         blink-caret .75s step-end infinite;
-    width: 225px;
+    animation-delay: 0.5s, 3.3s;
 }
 
 /* The typing effect */
 @keyframes typing {
     from { width: 0 }
-    to { width: 225px }
+    to { width: 100% }
 }
 
 /* The typewriter cursor effect */
