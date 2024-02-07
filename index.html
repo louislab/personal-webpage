@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <div id="header" class="header">
             <div class="row">
                 <div class="pic-container">
                     <img class="profile-pic" src="img/face.png">
@@ -18,12 +18,12 @@
                     I'm interested in software engineering, web development, and information security.
                     <br><br>
                     <div class="typewriter-container">
-                        <div class="typewriter">And below is my resume.</div>
+                        <div class="typewriter">Scroll down to read my resume :D</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="content">
+        <div id="content" class="content poping">
             <div class="paper center">
                 <button class="download-btn" onclick="window.open('doc/resume.pdf', '_blank')">Download it</button>
                 <h1>LEE Lok Yu</h1>
@@ -146,8 +146,9 @@
                     </ul>
                 </div>
             </div>
+            <button class="download-btn-mobile" onclick="window.open('doc/resume.pdf', '_blank')">Download it</button>
         </div>
-        <button class="download-btn-mobile" onclick="window.open('doc/resume.pdf', '_blank')">Download it</button>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

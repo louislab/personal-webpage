@@ -1,16 +1,20 @@
 .container {
-    display: grid;
+    display: flex;
     justify-content: center;
     -webkit-text-size-adjust: 100%;
+    overflow: hidden;
 }
 
 .header {
     background-color: #f1f1f1;
     padding: 2em;
-    margin: 2em 2em 0em 2em;
     text-align: center;
     border-radius: 10px;
-    max-width: 850px;
+    width: 70%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .download-btn {
@@ -50,10 +54,11 @@
     text-align: center;
     text-decoration: none;
     font-size: 2.5vh; /* larger on mobile and smaller on desktop */
-    margin: 1em 0.7em;
+    margin: 1em 0.7em 2em;
     border-radius: 10px;
     cursor: pointer;
     font-family: 'Cormorant Infant', serif;
+    width: 100%;
 }
 
 .download-btn-mobile:hover {
@@ -94,7 +99,7 @@
     line-height: 1.5em;
     align-self: center;
     text-align: left;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 @font-face {
@@ -119,6 +124,33 @@
 .content {
     display: flex;
     max-width: 1000px;
+    position: absolute;
+    top: 93vh;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.poping {
+    animation: 3s ease-in-out 2s infinite poping;
+}
+
+@keyframes poping {
+    0% {
+        top: 93vh;
+    }
+    25% {
+        top: 93vh;
+    }
+    50% {
+        top: 89vh;
+    }
+    75% {
+        top: 93vh;
+    }
+    100% {
+        top: 93vh;
+    }
 }
 
 .paper .subtitle {
@@ -208,7 +240,7 @@ ul.dash>li:before {
 }
 
 /* Desktop view */
-@media (min-device-width: 1600px) and (min-width: 800px) {
+@media (min-width: 940px) {
     .header {
         display: flex;
         justify-content: space-between;
