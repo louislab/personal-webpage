@@ -1,20 +1,66 @@
-.container {
+/* .container {
     display: flex;
     justify-content: center;
     -webkit-text-size-adjust: 100%;
     overflow: hidden;
+} */
+
+.fixed-container {
+    /* fix in the background */
+    position: fixed;
+    /* position in the middle */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* align items in the center */
+    text-align: center;
+    text-align: -webkit-center;
+    /* max width of the elements inside */
+    max-width: 80%;
 }
 
 .header {
     background-color: #f1f1f1;
     padding: 2em;
-    text-align: center;
     border-radius: 10px;
-    width: 70%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+}
+
+.pic-container {
+    /* vertical center */
+    align-self: center;
+}
+
+.mono {
+    font-family: 'Lucida Console', serif;
+    margin: 0em 2em;
+    line-height: 1.5em;
+    align-self: center; /* vertical center */
+    text-align: left;
+    font-size: 1em;
+}
+
+.social-media {
+    display: inline-flex;
+    background-color: #f1f1f1;
+    padding: 0em 1em;
+    margin-top: 2em;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.social-media > a {
+    text-decoration: none;
+}
+
+.icon {
+    padding: 0.5em 0.5em;
+    height: 30px;
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+}
+
+.icon:hover {
+    filter: grayscale(0%);
 }
 
 .download-btn {
@@ -58,7 +104,7 @@
     border-radius: 10px;
     cursor: pointer;
     font-family: 'Cormorant Infant', serif;
-    width: 100%;
+    width: 80%;
 }
 
 .download-btn-mobile:hover {
@@ -89,19 +135,6 @@
     text-align: right;
 }
 
-.pic-container {
-    align-self: center;
-}
-
-.mono {
-    font-family: 'Lucida Console', serif;
-    margin: 0em 2em;
-    line-height: 1.5em;
-    align-self: center;
-    text-align: left;
-    font-size: 1.2em;
-}
-
 @font-face {
     font-family: 'Lucida Console';
     src: url('../font/Lucida_Console_Regular.ttf');
@@ -117,18 +150,13 @@
     src: url('../font/Cormorant_SC_Light.ttf');
 }
 
-.center {
-    text-align: center;
-}
-
 .content {
     display: flex;
-    max-width: 1000px;
-    position: absolute;
-    top: 93vh;
-    justify-self: center;
-    align-items: center;
     flex-direction: column;
+    position: relative;
+    width: 100%;
+    top: 93vh;
+    align-items: center;
 }
 
 .poping {
@@ -192,7 +220,8 @@ ul.dash>li:before {
 }
 
 .paper {
-    width: 100%;
+    width: 80%;
+    max-width: 1000px;
     padding: 2em;
     margin: 2em;
     background-color: #f1f1f1;
@@ -202,6 +231,7 @@ ul.dash>li:before {
     font-family: 'Cormorant Infant', serif;
     font-size: 1.65vw;
     position: relative;
+    text-align: center;
 }
 
 .sm {
@@ -254,18 +284,14 @@ ul.dash>li:before {
         margin-bottom: 0em;
     }
 
-    .mono {
-        margin: 0em 2em;
-        font-size: 1em;
-    }
-
     .profile-pic {
         width: 150px;
         height: 150px;
     }
 
     .paper {
-        width: 100%;
+        width: 80%;
+        max-width: 1000px;
         padding: 2em;
         margin: 2em;
         background-color: #f1f1f1;
